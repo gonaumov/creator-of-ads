@@ -8,12 +8,6 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <style>
-  .add-content {
-    clear: both;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-  }
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;
@@ -269,6 +263,10 @@
     width: 1920px;
   }
 
+  .add-content {
+    word-break: break-word;
+    width: 50vw;
+  }
 
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
@@ -278,6 +276,9 @@
       width: 100%;
     }
 
+    .add-content {
+      width: 90vw;
+    }
     .card:not(.highlight-card) {
       height: 16px;
       margin: 8px 0;
@@ -352,29 +353,30 @@
 
   </div>
   <!-- Next Steps -->
+  <h2>Важно: Въпреки, че работи това не е реално приложение а шега.</h2>
+  <h2>Авторът няма друга цел освен да накара евентуалния потребител
+  да се усмихне.</h2>
   <h2>Next Steps</h2>
-  <p>Go to spam in Facebook</p>
+  <p>Just smile</p>
 
-  <input type="hidden" #technologies value="%[Java, Java Script, Python]%">
-  <input type="hidden" #email value="%email.recruiter.bg%">
+  <input type="hidden" #technologies value="Java, JavaScript, Python">
+  <input type="hidden" #email value="email.recruiter.bg">
+
+  <div class="add-content" #advertisement>
+    Здравейте хора,
+    за всички които я пожелахте, имам яка позиция за сеньор {{technologies.value}}
+    в западна компания, лидер в областта си.
+    Можете да ме намерите на {{email.value}}
+  </div>
 
   <div class="card-container">
-    <div class="add-content">
-   <pre #advertisement>
-      Здравейте хора,
-
-      за всички които я пожелахте, имам яка позиция за сеньор {{technologies.value}}
-      в западна компания, лидер в областта си.
-      Можете да ме намерите на {{email.value}}
-   </pre>
-    </div>
     <div class="card card-small" tabindex="0">
       Stack:
-      <input type="text" (keyup)="technologies.value = getInputValue($event)"/>
+      <input type="text" [value]="technologies.value" (keyup)="technologies.value = getInputValue($event)"/>
     </div>
     <div class="card card-small" tabindex="0">
       Email:
-      <input type="text" (keyup)="email.value = getInputValue($event)"/>
+      <input type="text" [value]="email.value" (keyup)="email.value = getInputValue($event)"/>
     </div>
 
     <div class="card card-small" tabindex="0">
