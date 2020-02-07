@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'creator-of-ads';
+  title = 'Creator of ads';
+  getInputValue(e: Event): string {
+    return e.target instanceof HTMLInputElement ? e.target.value : '';
+  }
 }
