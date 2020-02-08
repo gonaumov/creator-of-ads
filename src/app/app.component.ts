@@ -7,7 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Creator of ads';
-  getInputValue(e: Event): string {
-    return e.target instanceof HTMLInputElement ? e.target.value : '';
-  }
 }
