@@ -1,0 +1,31 @@
+<!-- Next Steps -->
+<h2>Важно: Въпреки, че работи, това не е реално приложение а шега.</h2>
+<h2>Авторът няма друга цел освен да накара евентуалния потребител
+  да се усмихне.</h2>
+<h2>Next Steps</h2>
+<p>Just smile</p>
+
+<input type="hidden" #technologies value="Java, JavaScript, Python">
+<input type="hidden" #email value="email.recruiter.bg">
+
+<div class="add-content" #advertisement>
+  Здравейте хора,
+  за всички които я пожелахте, имам яка позиция за сеньор {{technologies.value}}
+  в западна компания, лидер в областта си.
+  Можете да ме намерите на {{email.value}}
+</div>
+
+<div class="card-container">
+  <div class="card card-small" tabindex="0">
+    Stack:
+    <input type="text" [value]="technologies.value" (keyup)="technologies.value = getInputValue($event)"/>
+  </div>
+  <div class="card card-small" tabindex="0">
+    Email:
+    <input type="text" [value]="email.value" (keyup)="email.value = getInputValue($event)"/>
+  </div>
+
+  <div class="card card-small" tabindex="0">
+    <a [href]="'https://www.facebook.com/share.php?u=http://gonaumov.github.io/creator-of-ads&quote=' + advertisement.textContent">Post to Facebook</a>
+  </div>
+</div>
